@@ -1,4 +1,4 @@
-name: Build PS4 Payload
+name: "Build PS4 Payload"
 
 on:
   push:
@@ -18,6 +18,8 @@ jobs:
             -v ${{ github.workspace }}/payload:/workspace/payload \
             -w /workspace/payload/linux \
             gcc:12 \
+            pwd
+            ls
             make
 
       - name: Upload payload.bin
