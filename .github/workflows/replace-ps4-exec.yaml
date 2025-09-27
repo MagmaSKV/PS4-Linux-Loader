@@ -16,14 +16,14 @@ jobs:
 
       - name: Replace folder
         run: |
-            git submodule deinit -f linux/ps4-kexec || true
-            rm -rf .git/modules/linux/ps4-kexec
-            git rm -f linux/ps4-kexec || true
-            rm -rf linux/ps4-kexec
-            git submodule add https://github.com/MagmaSKV/ps4-kexec.git linux/ps4-kexec
-            git submodule update --init --recursive
-            git config user.name "github-actions"
-            git config user.email "github-actions@github.com"
-            git add .gitmodules linux/ps4-kexec
-            git commit -m "Actualizar submódulo ps4-kexec al fork"
-            git push origin HEAD
+          git submodule deinit -f linux/ps4-kexec || true
+          rm -rf .git/modules/linux/ps4-kexec
+          git rm -f linux/ps4-kexec || true
+          rm -rf linux/ps4-kexec
+          git submodule add https://github.com/MagmaSKV/ps4-kexec.git linux/ps4-kexec
+          git submodule update --init --recursive
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add .gitmodules linux/ps4-kexec
+          git commit -m "Actualizar submódulo ps4-kexec al fork"
+          git push --set-upstream origin HEAD
