@@ -1,4 +1,3 @@
 [submodule "linux/ps4-kexec"]
 	path = linux/ps4-kexec
-	url = https://github.com/EinTim23/ps4-kexec.git
-	branch = 11.00
+	url = https://github.com/MagmaSKV/ps4-kexec.git
