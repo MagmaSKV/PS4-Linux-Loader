@@ -1,0 +1,24 @@
+name: "Replace ps4-kexec"
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 1
+
+      - name: Build payload
+        run: |
+            git submodule deinit -f linux/ps4-kexec || true
+            rm -rf .git/modules/linux/ps4-kexec
+            rm -rf linux/ps4-kexec
+            git submodule add https://github.com/MagmaSKV/ps4-kexec.git linux/ps4-kexec
+            git submodule update --init --recursive
