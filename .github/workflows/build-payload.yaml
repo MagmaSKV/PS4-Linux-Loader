@@ -14,12 +14,8 @@ jobs:
 
       - name: Build payload
         run: |
-          docker run --rm \
-            -v ${{ github.workspace }}/payload:/workspace/payload \
-            -w /workspace/payload \
-            gcc:12 \
-            ls -l
-            bash -c "cd linux && make"
+          ls -l
+          bash -c "cd linux && make"
 
       - name: Upload payload.bin
         uses: actions/upload-artifact@v4
