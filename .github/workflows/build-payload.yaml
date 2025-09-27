@@ -12,16 +12,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build Docker image
-        run: docker build -t ps4-payload:latest .
-
       - name: Build payload
-        run: |
-          docker run --rm \
-            -v ${{ github.workspace }}/payload:/workspace/payload \
-            -w /workspace/payload/linux \
-            ps4-payload:latest \
-            make
+      run: |
+        docker run --rm \
+          -v ${{ github.workspace }}/payload:/workspace/payload \
+          -w /workspace/payload/linux \
+          gcc:12 \
+          make
 
       - name: Upload payload.bin
         uses: actions/upload-artifact@v4
