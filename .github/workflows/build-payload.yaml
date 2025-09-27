@@ -2,7 +2,7 @@ name: Build PS4 Payload
 
 on:
   push:
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
@@ -13,12 +13,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build payload
-      run: |
-        docker run --rm \
-          -v ${{ github.workspace }}/payload:/workspace/payload \
-          -w /workspace/payload/linux \
-          gcc:12 \
-          make
+        run: |
+          docker run --rm \
+            -v ${{ github.workspace }}/payload:/workspace/payload \
+            -w /workspace/payload/linux \
+            gcc:12 \
+            make
 
       - name: Upload payload.bin
         uses: actions/upload-artifact@v4
