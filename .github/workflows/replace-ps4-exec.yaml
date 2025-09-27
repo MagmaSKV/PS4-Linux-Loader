@@ -18,6 +18,7 @@ jobs:
         run: |
             git submodule deinit -f linux/ps4-kexec || true
             rm -rf .git/modules/linux/ps4-kexec
+            git rm -f linux/ps4-kexec || true
             rm -rf linux/ps4-kexec
             git submodule add https://github.com/MagmaSKV/ps4-kexec.git linux/ps4-kexec
             git submodule update --init --recursive
