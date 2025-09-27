@@ -14,7 +14,7 @@ jobs:
 
       - name: Build payload
         run: |
-          apt update && apt install yasm
+          sudo apt update && sudo apt install yasm
           ls -l
           bash -c "cd linux && make"
 
