@@ -26,4 +26,4 @@ jobs:
             git config user.email "github-actions@github.com"
             git add .gitmodules linux/ps4-kexec
             git commit -m "Actualizar submódulo ps4-kexec al fork"
-            git push origin main
+            git push origin HEAD
