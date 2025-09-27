@@ -121,16 +121,16 @@ int my_atoi(const char *s)
     return (neg) ? (-ret) : (ret);
 }
 
-#ifndef VRAM_GB_DEFAULT
+#ifndef VRAM_MB_DEFAULT
 #define VRAM_MB_DEFAULT 2048
 #endif
 
-#ifndef VRAM_GB_MIN
-#define VRAM_GB_MIN 128
+#ifndef VRAM_MB_MIN
+#define VRAM_MB_MIN 128
 #endif
 
-#ifndef VRAM_GB_MAX
-#define VRAM_GB_MAX (5*1024)
+#ifndef VRAM_MB_MAX
+#define VRAM_MB_MAX (5*1024)
 #endif
 
 #ifndef HDD_BOOT_PATH
