@@ -15,6 +15,7 @@ jobs:
           fetch-depth: 1
 
       - name: Replace folder
+        run: |
             git submodule deinit -f linux/ps4-kexec || true
             rm -rf .git/modules/linux/ps4-kexec
             rm -rf linux/ps4-kexec
