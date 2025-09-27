@@ -1,4 +1,3 @@
-
 all: payload.bin
 
 clean:
